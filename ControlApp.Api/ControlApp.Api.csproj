@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\Files\Customer.JSON" />
+    <Content Remove="wwwroot\Files\Goald.JSON" />
     <Content Remove="wwwroot\Files\Product.JSON" />
     <Content Remove="wwwroot\Files\User.JSON" />
   </ItemGroup>
@@ -36,6 +37,7 @@
   <ItemGroup>
     <None Include="wwwroot\Files\Product.JSON" />
     <None Include="wwwroot\Files\Customer.JSON" />
+    <None Include="wwwroot\Files\Goald.JSON" />
     <None Include="wwwroot\Files\User.JSON" />
   </ItemGroup>
 
