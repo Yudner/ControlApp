@@ -1,18 +1,18 @@
-﻿using ControlApp.Application.CommercialAdvisor.Queries.GetAllCommercialAdvisor;
+﻿using ControlApp.Application.User.Queries.GetAllUser;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace ControlApp.Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/commercial-advisor")]
-    public class CommercialAdvisorController : ControllerBase
+    [Route("api/v1/user")]
+    public class UserController : ControllerBase
     {
-        private readonly IGetAllCommercialAdvisorQuery _getAllCommercialAdvisorQuery;
+        private readonly IGetAllUserQuery _getAllUserQuery;
 
-        public CommercialAdvisorController(IGetAllCommercialAdvisorQuery getAllCommercialAdvisorQuery)
+        public UserController(IGetAllUserQuery getAllUserQuery)
         {
-            _getAllCommercialAdvisorQuery = getAllCommercialAdvisorQuery;
+            _getAllUserQuery = getAllUserQuery;
         }
 
         [HttpGet("getAll")]
@@ -20,8 +20,8 @@ namespace ControlApp.Api.Controllers
         {
             try
             {
-                var list = _getAllCommercialAdvisorQuery.Execute();
-                //CacheDependency
+                var list = _getAllUserQuery.Execute();
+
                 if (list == null)
                     return StatusCode(StatusCodes.Status204NoContent);
 

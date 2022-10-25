@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CommercialAdvisor\Commands\" />
+    <Folder Include="User\Commands\" />
   </ItemGroup>
 
   <ItemGroup>

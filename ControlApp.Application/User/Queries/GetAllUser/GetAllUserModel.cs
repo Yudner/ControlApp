@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControlApp.Application.CommercialAdvisor.Queries.GetAllCommercialAdvisor
+namespace ControlApp.Application.User.Queries.GetAllUser
 {
-    public class GetAllCommercialAdvisorModel
+    public class GetAllUserModel
     {
         public string Name { get; set; }
         public string Code { get; set; }

@@ -1,5 +1,5 @@
-using ControlApp.Application.CommercialAdvisor.Queries.GetAllCommercialAdvisor;
 using ControlApp.Application.DataBase;
+using ControlApp.Application.User.Queries.GetAllUser;
 using ControlApp.Persistence.DataBase;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +10,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddScoped<IDatabaseService, DatabaseService>();
-builder.Services.AddScoped<IGetAllCommercialAdvisorQuery, GetAllCommercialAdvisorQuery>();
+builder.Services.AddScoped<IGetAllUserQuery, GetAllUserQuery>();
 
 var app = builder.Build();
 
