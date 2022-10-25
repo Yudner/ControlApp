@@ -1,8 +1,16 @@
+using ControlApp.Application.CommercialAdvisor.Queries.GetAllCommercialAdvisor;
+using ControlApp.Application.DataBase;
+using ControlApp.Persistence.DataBase;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddScoped<IDatabaseService, DatabaseService>();
+builder.Services.AddScoped<IGetAllCommercialAdvisorQuery, GetAllCommercialAdvisorQuery>();
 
 var app = builder.Build();
 
