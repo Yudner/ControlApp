@@ -1,4 +1,6 @@
-﻿using ControlApp.Domain.User;
+﻿using ControlApp.Domain.Customer;
+using ControlApp.Domain.Product;
+using ControlApp.Domain.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,8 @@ namespace ControlApp.Application.DataBase
 {
     public interface IDatabaseService
     {
-        List<UserEntity> User();
+        List<UserEntity>? GetAllUser();
+        List<ProductEntity>? GetAllProduct();
+        bool CreateCustomer(CustomerEntity model);
     }
 }

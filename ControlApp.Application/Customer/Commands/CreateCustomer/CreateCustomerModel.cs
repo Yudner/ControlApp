@@ -1,9 +1,8 @@
 ﻿
-namespace ControlApp.Domain.Customer
+namespace ControlApp.Application.Customer.Commands.CreateCustomer
 {
-    public class CustomerEntity
+    public class CreateCustomerModel
     {
-        public int Id { get; set; }
         public string DocumentType { get; set; }
         public string DocumentNumber { get; set; }
         public string LastName { get; set; }

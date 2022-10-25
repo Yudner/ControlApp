@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "DocumentType": "DNI",
+    "DocumentNumber": "12345678",
+    "LastName": "yudner01",
+    "FirstName": "yudne022",
+    "PhoneNumber": "121212343"
+  },
+  {
+    "Id": 2,
+    "DocumentType": "DNI",
+    "DocumentNumber": "12345678",
+    "LastName": "yudner01",
+    "FirstName": "yudne022",
+    "PhoneNumber": "121212343"
+  },
+  {
+    "Id": 3,
+    "DocumentType": "DNI",
+    "DocumentNumber": "12345678",
+    "LastName": "yudner01",
+    "FirstName": "yudne022",
+    "PhoneNumber": "121212343"
+  }
+]

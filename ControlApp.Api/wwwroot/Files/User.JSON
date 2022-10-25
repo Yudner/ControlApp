@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Code": "A101",
+    "Name": "Jose Carrera",
+    "Role": "Asesor Comercial"
+  },
+  {
+    "Id": 2,
+    "Code": "A102",
+    "Name": "Juan Domingo",
+    "Role": "Asesor Comercial"
+  },
+  {
+    "Id": 3,
+    "Code": "A103",
+    "Name": "Javier Prado",
+    "Role": "Asesor Comercial"
+  },
+  {
+    "Id": 4,
+    "Code": "G101",
+    "Name": "Yudner Paredes",
+    "Role": "Gerente de Agencia"
+  },
+  {
+    "Id": 5,
+    "Code": "G102",
+    "Name": "Diego Paredes",
+    "Role": "Gerente de Agencia"
+  }
+]

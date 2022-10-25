@@ -1,18 +1,18 @@
-﻿using ControlApp.Application.User.Queries.GetAllUser;
+﻿using ControlApp.Application.Product.Queries.GetAllProduct;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace ControlApp.Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/user")]
-    public class UserController : ControllerBase
+    [Route("api/v1/product")]
+  
+    public class ProductController : ControllerBase
     {
-        private readonly IGetAllUserQuery _getAllUserQuery;
+        private readonly IGetAllProductQuery _getAllProductQuery;
 
-        public UserController(IGetAllUserQuery getAllUserQuery)
+        public ProductController(IGetAllProductQuery getAllProductQuery)
         {
-            _getAllUserQuery = getAllUserQuery;
+            _getAllProductQuery = getAllProductQuery;
         }
 
         [HttpGet("getAll")]
@@ -20,7 +20,7 @@ namespace ControlApp.Api.Controllers
         {
             try
             {
-                var list = _getAllUserQuery.Execute();
+                var list = _getAllProductQuery.Execute();
 
                 if (list == null)
                     return StatusCode(StatusCodes.Status204NoContent);

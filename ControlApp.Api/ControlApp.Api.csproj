@@ -23,8 +23,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Files\Customer.JSON" />
+    <Content Remove="wwwroot\Files\Product.JSON" />
+    <Content Remove="wwwroot\Files\User.JSON" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ControlApp.Application\ControlApp.Application.csproj" />
     <ProjectReference Include="..\ControlApp.Persistence\ControlApp.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Files\Product.JSON" />
+    <None Include="wwwroot\Files\Customer.JSON" />
+    <None Include="wwwroot\Files\User.JSON" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

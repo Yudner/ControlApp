@@ -2,97 +2,56 @@
 using ControlApp.Domain.Customer;
 using ControlApp.Domain.Product;
 using ControlApp.Domain.User;
+using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Xml.Linq;
 
 namespace ControlApp.Persistence.DataBase
 {
     public class DatabaseService: IDatabaseService
     {
-        public List<UserEntity> User()
+        private static string route = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot", "Files");
+       
+        public List<UserEntity>? GetAllUser()
         {
-            return new List<UserEntity>
+            var file = Path.Combine(route, "User.JSON");
+            using (StreamReader r = new StreamReader(file))
             {
-                new UserEntity
-                {
-                    Id = 1,
-                    Code = "A101",
-                    Name = "Jose Carrera",
-                    Role = "Asesor Comercial"
-                },
-                new UserEntity
-                {
-                    Id = 2,
-                    Code = "A102",
-                    Name = "Juan Domingo",
-                    Role = "Asesor Comercial"
-                },
-                new UserEntity
-                {
-                    Id = 3,
-                    Code = "A103",
-                    Name = "Javier Prado",
-                    Role = "Asesor Comercial"
-                },
-                new UserEntity
-                {
-                    Id = 4,
-                    Code = "G101",
-                    Name = "Yudner Paredes",
-                    Role = "Gerente de Agencia"
-                },
-                new UserEntity
-                {
-                    Id = 5,
-                    Code = "G102",
-                    Name = "Diego Paredes",
-                    Role = "Gerente de Agencia"
-                }
-            };
+                var json = r.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<UserEntity>>(json);
+            }
         }
 
-        public List<ProductEntity> Product()
+        public List<ProductEntity>? GetAllProduct()
         {
-            return new List<ProductEntity>
+            var file = Path.Combine(route, "Product.JSON");
+            using (StreamReader r = new StreamReader(file))
             {
-                new ProductEntity
-                {
-                    Id = 1,
-                    ProductName = "Tarjeta de Crédito Clásica",
-                    Points = 10
-                },
-
-                new ProductEntity
-                {
-                    Id = 2,
-                    ProductName = "Tarjeta de Crédito Oro",
-                    Points = 20
-                },
-                new ProductEntity
-                {
-                    Id = 3,
-                    ProductName = "Tarjeta de Crédito Platino",
-                    Points = 40
-                },
-                new ProductEntity
-                {
-                    Id = 4,
-                    ProductName = "Crédito Hipotecario",
-                    Percentage = 0.5
-                },
-                new ProductEntity
-                {
-                    Id = 5,
-                    ProductName = "Crédito efectivo",
-                    Percentage = 0.3
-                }
-            };
+                var json = r.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<ProductEntity>>(json);
+            }
         }
-        public List<CustomerEntity> Customer()
+
+        public bool CreateCustomer(CustomerEntity model)
         {
-            return new List<CustomerEntity>
+            var file = Path.Combine(route, "Customer.JSON");
+
+            using (StreamReader r = new StreamReader(file))
             {
+                var json = r.ReadToEnd();
+                var content = JsonConvert.DeserializeObject<List<CustomerEntity>>(json);
+                r.Close();
                 
-            };
-        }
+                if(content == null)
+                    content = new List<CustomerEntity>();
 
+                model.Id = content.Count + 1;
+                content.Add(model);
+                json = JsonConvert.SerializeObject(content, Formatting.Indented);
+                File.WriteAllText(file, json);
+                return true;
+            }            
+        }
     }
 }

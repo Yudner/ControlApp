@@ -1,4 +1,6 @@
+using ControlApp.Application.Customer.Commands.CreateCustomer;
 using ControlApp.Application.DataBase;
+using ControlApp.Application.Product.Queries.GetAllProduct;
 using ControlApp.Application.User.Queries.GetAllUser;
 using ControlApp.Persistence.DataBase;
 
@@ -11,6 +13,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IDatabaseService, DatabaseService>();
 builder.Services.AddScoped<IGetAllUserQuery, GetAllUserQuery>();
+builder.Services.AddScoped<IGetAllProductQuery, GetAllProductQuery>();
+builder.Services.AddScoped<ICreateCustomerCommand, CreateCustomerCommand>();
 
 var app = builder.Build();
 

@@ -13,7 +13,7 @@ namespace ControlApp.Application.User.Queries.GetAllUser
         }
         public List<GetAllUserModel>? Execute()
         {
-            var list = _databaseService.User();
+            var list = _databaseService.GetAllUser();
             if (list != null && list.Count > 0)
             {
                 var ObjectSerialize = JsonConvert.SerializeObject(list);
