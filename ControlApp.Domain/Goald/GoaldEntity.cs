@@ -7,6 +7,5 @@ namespace ControlApp.Domain.Goald
         public string Period { get; set; }
         public double Points { get; set; }
         public int UserId { get; set; }
-        public int CustomerId { get; set; }
     }
 }

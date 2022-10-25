@@ -10,5 +10,6 @@ namespace ControlApp.Domain.Sale
         public decimal Amount { get; set; }
         public int UserId { get; set; }
         public int CustomerId { get; set; }
+        public int ProductId { get; set; }
     }
 }

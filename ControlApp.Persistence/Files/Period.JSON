@@ -1,0 +1,27 @@
+[
+  {
+    "Id": 1,
+    "Year": "2022",
+    "Month": "Octubre"
+  },
+  {
+    "Id": 2,
+    "Year": "2022",
+    "Month": "Noviembre"
+  },
+  {
+    "Id": 3,
+    "Year": "2022",
+    "Month": "Diciembre"
+  },
+  {
+    "Id": 4,
+    "Year": "2023",
+    "Month": "Enero"
+  },
+  {
+    "Id": 5,
+    "Year": "2023",
+    "Month": "Febrero"
+  }
+]
