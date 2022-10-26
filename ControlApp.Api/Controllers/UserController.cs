@@ -2,6 +2,7 @@
 using ControlApp.Application.User.Queries.GetUserByCode;
 using ControlApp.Application.User.Queries.GetUserByRole;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 
 namespace ControlApp.Api.Controllers
@@ -53,7 +54,8 @@ namespace ControlApp.Api.Controllers
                 if (user == null)
                     return StatusCode(StatusCodes.Status204NoContent);
 
-                return StatusCode(StatusCodes.Status200OK, user);
+                return Ok(user);
+                //return StatusCode(StatusCodes.Status200OK, user);
 
             }
             catch (Exception e)
