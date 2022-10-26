@@ -37,6 +37,21 @@ namespace ControlApp.Persistence.DataBase
 
             }
         }
+        public UserEntity? GetUserByRole(string role)
+        {
+            var file = Path.Combine(route, "User.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                var list = JsonConvert.DeserializeObject<List<UserEntity>>(json);
+
+                if (list != null)
+                    return list.FirstOrDefault(x => x.Role == role);
+
+                return null;
+
+            }
+        }
         #endregion
 
         #region Product

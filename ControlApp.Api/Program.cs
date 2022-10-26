@@ -6,6 +6,7 @@ using ControlApp.Application.Period.Queries.GetAllPeriod;
 using ControlApp.Application.Product.Queries.GetAllProduct;
 using ControlApp.Application.User.Queries.GetAllUser;
 using ControlApp.Application.User.Queries.GetUserByCode;
+using ControlApp.Application.User.Queries.GetUserByRole;
 using ControlApp.Persistence.DataBase;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,7 @@ builder.Services.AddScoped<ICreateGoaldCommand, CreateGoaldCommand>();
 builder.Services.AddScoped<IGetAllPeriodQuery, GetAllPeriodQuery>();
 builder.Services.AddScoped<IGetAllGoaldQuery, GetAllGoaldQuery>();
 builder.Services.AddScoped<IGetUserByCodeQuery, GetUserByCodeQuery>();
+builder.Services.AddScoped<IGetUserByRoleQuery, GetUserByRoleQuery>();
 
 var app = builder.Build();
 

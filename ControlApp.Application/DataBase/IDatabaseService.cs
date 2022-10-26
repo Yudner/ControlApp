@@ -15,6 +15,7 @@ namespace ControlApp.Application.DataBase
     {
         List<UserEntity>? GetAllUser();
         UserEntity? GetUserByCode(string code);
+        UserEntity? GetUserByRole(string role);
         List<ProductEntity>? GetAllProduct();
         bool CreateCustomer(CustomerEntity model);
         bool CreateGoald(GoaldEntity model);

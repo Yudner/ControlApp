@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ControlApp.Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/product")]
+    [Route("api/v1/period")]
 
     public class PeriodController : ControllerBase
     {
