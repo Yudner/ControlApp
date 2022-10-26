@@ -1,7 +1,11 @@
 using ControlApp.Application.Customer.Commands.CreateCustomer;
 using ControlApp.Application.DataBase;
+using ControlApp.Application.Goald.Commands.CreateGoald;
+using ControlApp.Application.Goald.Queries.GetAllGoald;
+using ControlApp.Application.Period.Queries.GetAllPeriod;
 using ControlApp.Application.Product.Queries.GetAllProduct;
 using ControlApp.Application.User.Queries.GetAllUser;
+using ControlApp.Application.User.Queries.GetUserByCode;
 using ControlApp.Persistence.DataBase;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +19,10 @@ builder.Services.AddScoped<IDatabaseService, DatabaseService>();
 builder.Services.AddScoped<IGetAllUserQuery, GetAllUserQuery>();
 builder.Services.AddScoped<IGetAllProductQuery, GetAllProductQuery>();
 builder.Services.AddScoped<ICreateCustomerCommand, CreateCustomerCommand>();
+builder.Services.AddScoped<ICreateGoaldCommand, CreateGoaldCommand>();
+builder.Services.AddScoped<IGetAllPeriodQuery, GetAllPeriodQuery>();
+builder.Services.AddScoped<IGetAllGoaldQuery, GetAllGoaldQuery>();
+builder.Services.AddScoped<IGetUserByCodeQuery, GetUserByCodeQuery>();
 
 var app = builder.Build();
 

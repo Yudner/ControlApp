@@ -22,6 +22,21 @@ namespace ControlApp.Persistence.DataBase
                 return JsonConvert.DeserializeObject<List<UserEntity>>(json);
             }
         }
+        public UserEntity? GetUserByCode(string code)
+        {
+            var file = Path.Combine(route, "User.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                var list = JsonConvert.DeserializeObject<List<UserEntity>>(json);
+                
+                if (list != null)
+                    return list.FirstOrDefault(x => x.Code == code);
+
+                return null;
+
+            }
+        }
         #endregion
 
         #region Product

@@ -8,6 +8,7 @@ namespace ControlApp.Application.User.Queries.GetAllUser
 {
     public class GetAllUserModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
         public string Role { get; set; }
