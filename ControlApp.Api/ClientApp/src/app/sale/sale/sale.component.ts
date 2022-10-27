@@ -16,6 +16,7 @@ export class SaleComponent implements OnInit {
   periodList: any;
   saleModel: any;
   productTemp: any;
+  userName: any;
   constructor(
     public appComponent: AppComponent,
     private saleService: SaleService,
@@ -29,6 +30,7 @@ export class SaleComponent implements OnInit {
     this.InitializeLisProduct();
     this.InitializeModels();
     this.InitializeListPeriod();
+    this.userName = localStorage.getItem('name')
   }
   InitializeModels() {
     this.saleModel = {

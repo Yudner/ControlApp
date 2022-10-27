@@ -2,33 +2,17 @@
   {
     "Id": 1,
     "DocumentType": "DNI",
-    "DocumentNumber": "11111111",
-    "LastName": "yudner01",
-    "FirstName": "yudne01",
-    "PhoneNumber": "121212343"
+    "DocumentNumber": "21212121",
+    "LastName": "perez",
+    "FirstName": "juan ",
+    "PhoneNumber": "8989787874"
   },
   {
     "Id": 2,
     "DocumentType": "DNI",
-    "DocumentNumber": "22222222",
-    "LastName": "yudner02",
-    "FirstName": "yudne02",
-    "PhoneNumber": "121212343"
-  },
-  {
-    "Id": 3,
-    "DocumentType": "DNI",
-    "DocumentNumber": "33333333",
-    "LastName": "yudner03",
-    "FirstName": "yudne03",
-    "PhoneNumber": "121212343"
-  },
-  {
-    "Id": 4,
-    "DocumentType": "CE",
-    "DocumentNumber": "21212121",
-    "LastName": "cfcccc",
-    "FirstName": "3e3ede",
-    "PhoneNumber": "212121211"
+    "DocumentNumber": "2132435",
+    "LastName": "Díaz",
+    "FirstName": "pedro",
+    "PhoneNumber": "98398934"
   }
 ]

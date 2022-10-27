@@ -6,6 +6,7 @@ using ControlApp.Application.Period.Queries.GetAllPeriod;
 using ControlApp.Application.Product.Queries.GetAllProduct;
 using ControlApp.Application.Sale.Commands.CreateSale;
 using ControlApp.Application.Sale.Queries.GetSaleByUserId;
+using ControlApp.Application.Tracing.Queries.GetTracing;
 using ControlApp.Application.User.Queries.GetAllUser;
 using ControlApp.Application.User.Queries.GetUserByCode;
 using ControlApp.Application.User.Queries.GetUserByRole;
@@ -29,6 +30,7 @@ builder.Services.AddScoped<IGetUserByCodeQuery, GetUserByCodeQuery>();
 builder.Services.AddScoped<IGetUserByRoleQuery, GetUserByRoleQuery>();
 builder.Services.AddScoped<IGetSaleByUserIdQuery, GetSaleByUserIdQuery>();
 builder.Services.AddScoped<ICreateSaleCommand, CreateSaleCommand>();
+builder.Services.AddScoped<IGetTracingQuery, GetTracingQuery>();
 
 builder.Services.AddCors();
 

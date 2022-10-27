@@ -65,6 +65,16 @@ namespace ControlApp.Persistence.DataBase
                 return JsonConvert.DeserializeObject<List<ProductEntity>>(json);
             }
         }
+        public ProductEntity? GetProductById(int id)
+        {
+            var file = Path.Combine(route, "Product.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                var list = JsonConvert.DeserializeObject<List<ProductEntity>>(json);
+                return list?.FirstOrDefault(x => x.Id == id);
+            }
+        }
         #endregion
 
         #region Customer
@@ -95,6 +105,17 @@ namespace ControlApp.Persistence.DataBase
             {
                 var json = r.ReadToEnd();
                 return JsonConvert.DeserializeObject<List<CustomerEntity>>(json);
+            }
+        }
+        public CustomerEntity? GetCustomerById(int id)
+        {
+            var file = Path.Combine(route, "Customer.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                var list = JsonConvert.DeserializeObject<List<CustomerEntity>>(json);
+                var customer = list?.FirstOrDefault(x => x.Id == id);
+                return customer;
             }
         }
         #endregion
@@ -130,7 +151,7 @@ namespace ControlApp.Persistence.DataBase
                 return JsonConvert.DeserializeObject<List<GoaldEntity>>(json);
             }
         }
-        public GoaldEntity? GetGoaldByUserId(int userId)
+        public GoaldEntity? GetGoaldByUserIdPeriodId(int userId, int periodId)
         {
             var file = Path.Combine(route, "Goald.JSON");
             using (StreamReader r = new StreamReader(file))
@@ -138,7 +159,7 @@ namespace ControlApp.Persistence.DataBase
                 var json = r.ReadToEnd();
                 var list = JsonConvert.DeserializeObject<List<GoaldEntity>>(json);
                 if (list != null)
-                    return list.FirstOrDefault(x => x.UserId == userId);
+                    return list.FirstOrDefault(x => x.UserId == userId && x.PeriodId == periodId);
 
                 return null;
             }
@@ -198,7 +219,22 @@ namespace ControlApp.Persistence.DataBase
                 if (list != null)
                     return list.Where(x => x.UserId == userId).ToList();
 
-                return null;
+                return new List<SaleEntity>();
+            }
+        }
+
+        public List<SaleEntity>? GetAllSaleByUserIdByPeriodId(int userId, int periodId)
+        {
+            var file = Path.Combine(route, "Sale.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                var list = JsonConvert.DeserializeObject<List<SaleEntity>>(json);
+
+                if (list != null)
+                    return list.Where(x => x.UserId == userId && x.PeriodId == periodId).ToList();
+
+                return new List<SaleEntity>();
             }
         }
         #endregion

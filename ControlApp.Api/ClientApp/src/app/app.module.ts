@@ -43,6 +43,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './home/home/home.component';
 import { GoaldComponent } from './goald/goald/goald.component';
 import { SaleComponent } from './sale/sale/sale.component';
+import { TracingComponent } from './tracing/tracing/tracing.component';
 const materialModules = [
   MatAutocompleteModule,
   MatButtonModule,
@@ -81,7 +82,8 @@ const materialModules = [
     LoginComponent,
     HomeComponent,
     GoaldComponent,
-    SaleComponent
+    SaleComponent,
+    TracingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -91,7 +93,8 @@ const materialModules = [
       { path: '', redirectTo: 'login', pathMatch: 'full'},
       { path: 'login',  component: LoginComponent},
       { path: 'goald',  component: GoaldComponent},
-      { path: 'sale',  component: SaleComponent}
+      { path: 'sale',  component: SaleComponent},
+      { path: 'tracing',  component: TracingComponent}
     ]),
     BrowserAnimationsModule,
     MatSliderModule,

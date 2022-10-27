@@ -18,9 +18,6 @@ constructor(private router: Router) {
 ngOnInit() {
 }
   hideNav(item: any) {
-    // localStorage.setItem('idOrderResendSaleOrder', '0');
-    // localStorage.setItem('statusResendSO', 'false');
-    // localStorage.setItem('statusEditSO', 'false');
     this.router.navigate(item);
   }
 }

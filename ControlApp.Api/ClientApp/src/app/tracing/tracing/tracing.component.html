@@ -1,0 +1,63 @@
+<h2 class="display-5">Seguimiento de metas</h2>
+<hr>
+<form #form="ngForm" autocomplete="off">
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Asesor</label>
+            <select name="user" class="form-control" (change)="loadUser($event.target)" id="idUser">
+                <option value="0">-Seleccionar-</option>
+                <option *ngFor="let item of userList"  value="{{item.id}}">{{item.name}}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Periodo</label>
+            <select name="user" class="form-control" (change)="loadPeriod($event.target)" id="idPeriod">
+                <option value="0">-Seleccionar-</option>
+                <option *ngFor="let item of periodList"  value="{{item.id}}">{{item.year}} - {{item.month}}</option>
+            </select>
+        </div>
+        
+    </div>
+    <br>
+    <div class="form-col">
+        <div class="form-group ">
+            <button id="buttonNewGoald" type="button"  (click)= "GetData()" class="btn btn-outline-success ml-1"><i></i>Buscar</button>
+        </div>
+        
+    </div>
+
+    <br>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <h2 class="display-5">Meta: {{tracingdData.goald}}</h2>
+    
+        </div>
+        <div class="form-group col-md-3">
+            <h2 class="display-5">Actualmete: {{tracingdData.point}}</h2>
+    
+        </div>
+    </div>
+    
+    <br>
+    <table class="table table-hover" id="tableItems">
+        <thead>
+            <th>N°</th>
+            <th>Producto</th>
+            <th>Cliente</th>
+            <th>Monto</th>
+            <th>Puntos</th>
+            <th>Fecha</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of tracingdData.sales; let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{item.productName}}</td>
+                <td>{{item.customerName}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.points}}</td>
+                <td>{{item.saleDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+</form>

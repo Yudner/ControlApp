@@ -18,14 +18,17 @@ namespace ControlApp.Application.DataBase
         UserEntity? GetUserByCode(string code);
         List<UserEntity>? GetUserByRole(string role);
         List<ProductEntity>? GetAllProduct();
+        ProductEntity? GetProductById(int id);
         int CreateCustomer(CustomerEntity model);
         List<CustomerEntity>? GetAllCustomer();
+        CustomerEntity? GetCustomerById(int id);
         bool CreateGoald(GoaldEntity model);
         List<GoaldEntity>? GetAllGoald();
-        GoaldEntity? GetGoaldByUserId(int userId);
+        GoaldEntity? GetGoaldByUserIdPeriodId(int userId, int periodId);
         List<PeriodEntity>? GetAllPeriod();
         bool CreateSale(SaleEntity model);
         List<SaleEntity>? GetAllSale();
         List<SaleEntity>? GetAllSaleByUserId(int userId);
+        List<SaleEntity>? GetAllSaleByUserIdByPeriodId(int userId, int periodId);
     }
 }

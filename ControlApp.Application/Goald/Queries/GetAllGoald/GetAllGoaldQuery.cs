@@ -15,6 +15,8 @@ namespace ControlApp.Application.Goald.Queries.GetAllGoald
             var listResult = new List<GetAllGoaldModel>();
 
             var listGoald = _databaseService.GetAllGoald();
+            if(listGoald == null)
+                return listResult;
 
             foreach (var item in listGoald)
             {

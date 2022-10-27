@@ -43,7 +43,8 @@ validateResponseAutentication(response: any){
     {
       this.appComponent.gerente = true;
       this.appComponent.asesor = false;
-      this.router.navigate(['/goald']);
+      // this.router.navigate(['/goald']);
+      this.router.navigate(['/tracing']);
     }
     else
     {

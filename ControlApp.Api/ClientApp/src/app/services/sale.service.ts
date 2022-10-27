@@ -19,4 +19,7 @@ export class SaleService {
   getByUserId(userId: any){
     return this.http.get(environment.apiURL + '/api/v1/sale/getByUserId/' + userId);
   }
+  getTracing(userId: any, periodId: any){
+    return this.http.get(environment.apiURL + '/api/v1/sale/getTracing/' + userId + "/" + periodId);
+  }
 }
