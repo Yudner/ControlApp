@@ -1,13 +1,19 @@
 [
   {
     "Id": 1,
-    "Points": 80.0,
+    "Points": 50.0,
     "PeriodId": 1,
     "UserId": 1
   },
   {
     "Id": 2,
-    "Points": 120.0,
+    "Points": 300.0,
+    "PeriodId": 2,
+    "UserId": 1
+  },
+  {
+    "Id": 3,
+    "Points": 90.0,
     "PeriodId": 1,
     "UserId": 2
   }

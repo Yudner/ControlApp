@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 1,
+    "Points": 60.0,
+    "SaleDate": "2022-10-27T07:24:05.1754976-05:00",
+    "Amount": 20000.0,
+    "UserId": 1,
+    "CustomerId": 3,
+    "ProductId": 5,
+    "PeriodId": 1
+  }
+]

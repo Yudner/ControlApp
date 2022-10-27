@@ -14,5 +14,13 @@
     "LastName": "Díaz",
     "FirstName": "pedro",
     "PhoneNumber": "98398934"
+  },
+  {
+    "Id": 3,
+    "DocumentType": "DNI",
+    "DocumentNumber": "21674356",
+    "LastName": "Perez",
+    "FirstName": "Jorge",
+    "PhoneNumber": "98989832"
   }
 ]
