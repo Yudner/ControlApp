@@ -23,17 +23,17 @@ namespace ControlApp.Api.Controllers
             try
             {
                 if (model == null)
-                    return StatusCode(StatusCodes.Status400BadRequest, "Parámetros no válidos");
+                    return StatusCode(StatusCodes.Status400BadRequest, 400);
 
                 if (!ModelState.IsValid)
-                    return StatusCode(StatusCodes.Status400BadRequest, "Parámetros no válidos");
+                    return StatusCode(StatusCodes.Status400BadRequest, 400);
 
                 var result = _createGoaldCommand.Execute(model);
 
                 if (!result)
-                    return StatusCode(StatusCodes.Status400BadRequest);
+                    return StatusCode(StatusCodes.Status400BadRequest, 400);
 
-                return StatusCode(StatusCodes.Status200OK);
+                return StatusCode(StatusCodes.Status200OK, 200);
 
             }
             catch (Exception e)

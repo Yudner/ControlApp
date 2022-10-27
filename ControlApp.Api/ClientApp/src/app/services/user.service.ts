@@ -15,4 +15,7 @@ export class UserService{
   getAll(){
     return this.http.get(environment.apiURL + '/api/v1/user/getAll/');
   }
+  getByRole(role: string){
+    return this.http.get(environment.apiURL + '/api/v1/user/getByRole/' + role);
+  }
 }

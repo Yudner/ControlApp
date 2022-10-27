@@ -11,6 +11,11 @@ namespace ControlApp.Application.Goald.Queries.GetAllGoald
         public int Id { get; set; }
         public double Points { get; set; }
         public int PeriodId { get; set; }
+        public string Year { get; set; }
+        public string Month { get; set; }
         public int UserId { get; set; }
+        public string Name { get; set; }
+        public string Role { get; set; }
+        public string Code { get; set; }
     }
 }

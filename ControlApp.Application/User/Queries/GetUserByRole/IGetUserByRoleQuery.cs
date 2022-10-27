@@ -8,6 +8,6 @@ namespace ControlApp.Application.User.Queries.GetUserByRole
 {
     public interface IGetUserByRoleQuery
     {
-        GetUserByRoleModel? Execute(string role);
+        List<GetUserByRoleModel>? Execute(string role);
     }
 }

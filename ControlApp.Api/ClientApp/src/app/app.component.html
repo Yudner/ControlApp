@@ -1,3 +1,18 @@
+<header id="header" class="header-h" *ngIf="showNav">
+    <div class="btn-show-nav"></div>
+    <div class="options" *ngIf="gerente">
+        <a (click)="hideNav(['/goald'])"> Metas </a>
+    </div>
+    <div class="options" *ngIf="gerente">
+        <a (click)="hideNav(['/login'])"> Salir </a>
+    </div>
+    <div class="options" *ngIf="asesor">
+        <a (click)="hideNav(['/sale'])"> Venta </a>
+    </div>
+    <div class="options" *ngIf="asesor">
+        <a (click)="hideNav(['/login'])"> Salir </a>
+    </div>
+</header>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
       <div class="row">

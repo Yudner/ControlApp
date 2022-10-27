@@ -1,0 +1,57 @@
+<h2 class="display-5">Control de metas</h2>
+<hr>
+<form #form="ngForm" autocomplete="off">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputPassword4">Asesor</label>
+            <select name="user" class="form-control" (change)="loadUser($event.target)" id="idUser">
+                <option value="0">-Seleccionar-</option>
+                <option *ngFor="let item of userList"  value="{{item.id}}">{{item.name}}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputPassword4">Periodo</label>
+            <select name="user" class="form-control" (change)="loadPeriod($event.target)" id="idPeriod">
+                <option value="0">-Seleccionar-</option>
+                <option *ngFor="let item of periodList"  value="{{item.id}}">{{item.year}} - {{item.month}}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">Puntos Objetivo</label>
+            <input type="number" class="form-control" value="" id="point">
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="form-group ">
+            <button id="buttonNewGoald" type="button" (click)="Clear()" class="btn btn-outline-success ml-1"><i></i>Nuevo</button>
+        </div>
+        <div class="form-group ">
+            <button id="buttonSaveGoald" type="button" (click)="SaveGoald()" class="btn btn-outline-success ml-1"><i></i>Guardar</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <table class="table table-hover" id="tableItems">
+        <thead>
+            <th>N°</th>
+            <th>Asesor</th>
+            <th>Código</th>
+            <th>Año</th>
+            <th>Mes</th>
+            <th>Puntos Objetivo</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of goaldList; let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.code}}</td>
+                <td>{{item.year}}</td>
+                <td>{{item.month}}</td>
+                <td>{{item.points}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+</form>

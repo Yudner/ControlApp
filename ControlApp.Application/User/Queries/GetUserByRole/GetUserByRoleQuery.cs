@@ -17,13 +17,13 @@ namespace ControlApp.Application.User.Queries.GetUserByRole
         {
             _databaseService = databaseService;
         }
-        public GetUserByRoleModel? Execute(string role)
+        public List<GetUserByRoleModel>? Execute(string role)
         {
-            var user = _databaseService.GetUserByRole(role);
-            if (user != null)
+            var list = _databaseService.GetUserByRole(role);
+            if (list != null)
             {
-                var ObjectSerialize = JsonConvert.SerializeObject(user);
-                return JsonConvert.DeserializeObject<GetUserByRoleModel>(ObjectSerialize);
+                var ObjectSerialize = JsonConvert.SerializeObject(list);
+                return JsonConvert.DeserializeObject<List<GetUserByRoleModel>>(ObjectSerialize);
             }
             return null;
         }

@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GoaldService {
+
+  constructor(private http: HttpClient) { }
+  create(model: any): Observable<any> {
+    return this.http.post(environment.apiURL + '/api/v1/goald/create', model);
+  }
+  getAll(){
+    return this.http.get(environment.apiURL + '/api/v1/goald/getAll/');
+  }
+}

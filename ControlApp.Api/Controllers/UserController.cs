@@ -54,8 +54,7 @@ namespace ControlApp.Api.Controllers
                 if (user == null)
                     return StatusCode(StatusCodes.Status204NoContent);
 
-                return Ok(user);
-                //return StatusCode(StatusCodes.Status200OK, user);
+                return StatusCode(StatusCodes.Status200OK, user);
 
             }
             catch (Exception e)

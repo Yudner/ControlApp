@@ -1,3 +1,19 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.jumbotron {
+    padding-top: 100px;
+    /* background: #0080ff; */
+    background: #fff;
+}
+
+.form-contol,
+.input-group-text {
+    border: 1px solid #0080ff;
+}
+
+table.table-hover tbody tr:hover {
+    cursor: pointer;
+}
+
 html,
 body {
   height: 100%;
@@ -76,4 +92,78 @@ body {
   background: #FFF7FA;
 }.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
+}
+
+.header-h {
+  height: 60px;
+  background: #260c6d;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.31);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.31);
+}
+
+.header-h .btn-show-nav {
+  width: 60px;
+  height: 60px;
+  float: left;
+  cursor: pointer;
+}
+
+.header-h .btn-off-app {
+  width: 60px;
+  height: 60px;
+  float: right;
+  border: none;
+  border-left: 1px solid #8f072d;
+  outline: none;
+  cursor: pointer;
+}
+
+.header-h .btn-off-app:hover {}
+
+.header-h .options {
+  float: left;
+  font-size: 14px;
+}
+
+.header-h .options a {
+  width: 180px;
+  display: block;
+  padding: 20px 40px 20px 20px;
+  /*border-top: 1px solid #000000;
+    border-bottom: 1px solid #2f2f2f;*/
+  position: relative;
+  text-align: left;
+  color: white;
+  cursor: pointer;
+}
+
+.header-h .options a:hover {
+  width: 180px;
+  display: block;
+  padding: 20px 40px 20px 20px;
+  border-top: 1px solid #EB5E0F;
+  border-bottom: 0px solid #EB5E0F;
+  position: relative;
+  text-align: left;
+  color: white;
+  cursor: pointer;
+}
+
+.header-h .user-profile {
+  color: white;
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+  float: right;
+  border-left: 1px solid #8f072d;
+  padding: 0px 20px 0px 48px;
+}
+
+.header-h .user-profile .ico-user {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 18px;
+  left: 18px;
 }

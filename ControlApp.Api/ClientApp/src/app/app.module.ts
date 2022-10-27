@@ -40,6 +40,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
+import { HomeComponent } from './home/home/home.component';
+import { GoaldComponent } from './goald/goald/goald.component';
+import { SaleComponent } from './sale/sale/sale.component';
 const materialModules = [
   MatAutocompleteModule,
   MatButtonModule,
@@ -75,7 +78,10 @@ const materialModules = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    GoaldComponent,
+    SaleComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -83,7 +89,9 @@ const materialModules = [
     FormsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full'},
-      { path: 'login',  component: LoginComponent}
+      { path: 'login',  component: LoginComponent},
+      { path: 'goald',  component: GoaldComponent},
+      { path: 'sale',  component: SaleComponent}
     ]),
     BrowserAnimationsModule,
     MatSliderModule,
