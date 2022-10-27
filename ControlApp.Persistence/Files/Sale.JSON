@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Points": 30.0,
+    "SaleDate": "2022-12-09T00:00:00",
+    "Amount": 10000.0,
+    "UserId": 1,
+    "CustomerId": 1,
+    "ProductId": 1,
+    "PeriodId": 1
+  },
+  {
+    "Id": 2,
+    "Points": 60.0,
+    "SaleDate": "2022-12-09T00:00:00",
+    "Amount": 30000.0,
+    "UserId": 1,
+    "CustomerId": 2,
+    "ProductId": 2,
+    "PeriodId": 1
+  },
+  {
+    "Id": 3,
+    "Points": 40.0,
+    "SaleDate": "2022-10-27T05:22:43.1057789-05:00",
+    "Amount": 23422.0,
+    "UserId": 1,
+    "CustomerId": 4,
+    "ProductId": 3,
+    "PeriodId": 1
+  }
+]

@@ -17,11 +17,11 @@
   {
     "Id": 4,
     "ProductName": "Crédito Hipotecario",
-    "Percentage": 0.5
+    "Percentage": 0.005
   },
   {
     "Id": 5,
     "ProductName": "Crédito efectivo",
-    "Percentage": 0.3
+    "Percentage": 0.003
   }
 ]

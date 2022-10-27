@@ -1,1 +1,94 @@
-<p>sale works!</p>
+<h2 class="display-5">Control de ventas</h2>
+<hr>
+<form #form="ngForm" autocomplete="off">
+    <h5 class="display-5">Datos del cliente</h5>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label>Tipo de documento</label>
+            <select name="documentType" id="documentType" (change)="loadDocumentType()" class="form-control">
+                    <option value="0">-Seleccionar-</option>
+                    <option value="DNI">DNI</option>
+                    <option value="CE">CE</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">Número de documento</label>
+            <input type="text" class="form-control" value="" id="documentNumber">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Nombres</label>
+            <input type="text" class="form-control" value="" id="firstName">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Apellidos</label>
+            <input type="text" class="form-control" value="" id="lastName">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">Celular</label>
+            <input type="text" class="form-control" value="" id="phoneNumber">
+        </div>
+    </div>
+    <hr>
+    <h5 class="display-5">Datos de venta</h5>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Producto</label>
+            <select name="product" class="form-control" (change)="loadProduct($event.target)" id="idProduct">
+                <option value="0">-Seleccionar-</option>
+                <option *ngFor="let item of productList"  value="{{item.id}}">{{item.productName}}</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">Monto ($)</label>
+            <input type="number" (keyup)="UpdatePoints()" (click)="UpdatePoints()" class="form-control" value="" id="amount">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputPassword4">Puntos obtenidos</label>
+            <input type="number" class="form-control" value="" id="points" disabled>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputPassword4">Periodo</label>
+            <select name="user" class="form-control" (change)="loadPeriod($event.target)" id="idPeriod">
+                <option value="0">-Seleccionar-</option>
+                <option *ngFor="let item of periodList"  value="{{item.id}}">{{item.year}} - {{item.month}}</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="form-group ">
+            <button id="buttonNewGoald" type="button" (click)="Clear()" class="btn btn-outline-success ml-1"><i></i>Nuevo</button>
+        </div>
+        <div class="form-group ">
+            <button id="buttonSaveGoald" type="button" (click)="SaveSale()" class="btn btn-outline-success ml-1"><i></i>Guardar</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <table class="table table-hover" id="tableItems">
+        <thead>
+            <th>N°</th>
+            <th>Cliente</th>
+            <th>Número de documento</th>
+            <th>Producto</th>
+            <th>Monto ($)</th>
+            <th>Puntos</th>
+            <th>Periodo</th>
+            <th>Fecha de venta</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of saleList; let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{item.customerName}}</td>
+                <td>{{item.documentNumber}}</td>
+                <td>{{item.productName}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.points}}</td>
+                <td>{{item.year}} - {{item.month}}</td>
+                <td>{{item.saleDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+</form>

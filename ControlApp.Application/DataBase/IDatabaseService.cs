@@ -2,6 +2,7 @@
 using ControlApp.Domain.Goald;
 using ControlApp.Domain.Period;
 using ControlApp.Domain.Product;
+using ControlApp.Domain.Sale;
 using ControlApp.Domain.User;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,14 @@ namespace ControlApp.Application.DataBase
         UserEntity? GetUserByCode(string code);
         List<UserEntity>? GetUserByRole(string role);
         List<ProductEntity>? GetAllProduct();
-        bool CreateCustomer(CustomerEntity model);
+        int CreateCustomer(CustomerEntity model);
+        List<CustomerEntity>? GetAllCustomer();
         bool CreateGoald(GoaldEntity model);
         List<GoaldEntity>? GetAllGoald();
         GoaldEntity? GetGoaldByUserId(int userId);
         List<PeriodEntity>? GetAllPeriod();
+        bool CreateSale(SaleEntity model);
+        List<SaleEntity>? GetAllSale();
+        List<SaleEntity>? GetAllSaleByUserId(int userId);
     }
 }

@@ -1,11 +1,14 @@
-﻿
-namespace ControlApp.Domain.Sale
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ControlApp.Application.Sale.Commands.CreateSale
 {
-    public class SaleEntity
+    public class CreateSaleModel
     {
-        public int Id { get; set; }
         public double Points { get; set; }
-        public DateTime SaleDate { get; set; }
         public decimal Amount { get; set; }
         public int UserId { get; set; }
         public int CustomerId { get; set; }

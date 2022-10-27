@@ -11,7 +11,7 @@ namespace ControlApp.Application.Customer.Commands.CreateCustomer
         {
             _databaseService = databaseService;
         }
-        public bool Execute(CreateCustomerModel model)
+        public int Execute(CreateCustomerModel model)
         {
             var CutomerEntity = new CustomerEntity
             {

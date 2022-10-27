@@ -8,6 +8,7 @@ namespace ControlApp.Application.Product.Queries.GetAllProduct
 {
     public class GetAllProductModel
     {
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public double Points { get; set; }
         public double Percentage { get; set; }

@@ -3,6 +3,7 @@ using ControlApp.Domain.Customer;
 using ControlApp.Domain.Goald;
 using ControlApp.Domain.Period;
 using ControlApp.Domain.Product;
+using ControlApp.Domain.Sale;
 using ControlApp.Domain.User;
 using Newtonsoft.Json;
 
@@ -67,7 +68,7 @@ namespace ControlApp.Persistence.DataBase
         #endregion
 
         #region Customer
-        public bool CreateCustomer(CustomerEntity model)
+        public int CreateCustomer(CustomerEntity model)
         {
             var file = Path.Combine(route, "Customer.JSON");
 
@@ -84,7 +85,16 @@ namespace ControlApp.Persistence.DataBase
                 content.Add(model);
                 json = JsonConvert.SerializeObject(content, Formatting.Indented);
                 File.WriteAllText(file, json);
-                return true;
+                return model.Id;
+            }
+        }
+        public List<CustomerEntity>? GetAllCustomer()
+        {
+            var file = Path.Combine(route, "Customer.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<CustomerEntity>>(json);
             }
         }
         #endregion
@@ -143,6 +153,52 @@ namespace ControlApp.Persistence.DataBase
             {
                 var json = r.ReadToEnd();
                 return JsonConvert.DeserializeObject<List<PeriodEntity>>(json);
+            }
+        }
+        #endregion
+
+        #region Sale
+        public bool CreateSale(SaleEntity model)
+        {
+            var file = Path.Combine(route, "Sale.JSON");
+
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                var content = JsonConvert.DeserializeObject<List<SaleEntity>>(json);
+                r.Close();
+
+                if (content == null)
+                    content = new List<SaleEntity>();
+
+                model.Id = content.Count + 1;
+                content.Add(model);
+                json = JsonConvert.SerializeObject(content, Formatting.Indented);
+                File.WriteAllText(file, json);
+                return true;
+            }
+        }
+        public List<SaleEntity>? GetAllSale()
+        {
+            var file = Path.Combine(route, "Sale.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<SaleEntity>>(json);
+            }
+        }
+        public List<SaleEntity>? GetAllSaleByUserId(int userId)
+        {
+            var file = Path.Combine(route, "Sale.JSON");
+            using (StreamReader r = new StreamReader(file))
+            {
+                var json = r.ReadToEnd();
+                var list = JsonConvert.DeserializeObject<List<SaleEntity>>(json);
+
+                if (list != null)
+                    return list.Where(x => x.UserId == userId).ToList();
+
+                return null;
             }
         }
         #endregion

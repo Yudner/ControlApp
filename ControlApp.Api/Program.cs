@@ -4,6 +4,8 @@ using ControlApp.Application.Goald.Commands.CreateGoald;
 using ControlApp.Application.Goald.Queries.GetAllGoald;
 using ControlApp.Application.Period.Queries.GetAllPeriod;
 using ControlApp.Application.Product.Queries.GetAllProduct;
+using ControlApp.Application.Sale.Commands.CreateSale;
+using ControlApp.Application.Sale.Queries.GetSaleByUserId;
 using ControlApp.Application.User.Queries.GetAllUser;
 using ControlApp.Application.User.Queries.GetUserByCode;
 using ControlApp.Application.User.Queries.GetUserByRole;
@@ -25,6 +27,8 @@ builder.Services.AddScoped<IGetAllPeriodQuery, GetAllPeriodQuery>();
 builder.Services.AddScoped<IGetAllGoaldQuery, GetAllGoaldQuery>();
 builder.Services.AddScoped<IGetUserByCodeQuery, GetUserByCodeQuery>();
 builder.Services.AddScoped<IGetUserByRoleQuery, GetUserByRoleQuery>();
+builder.Services.AddScoped<IGetSaleByUserIdQuery, GetSaleByUserIdQuery>();
+builder.Services.AddScoped<ICreateSaleCommand, CreateSaleCommand>();
 
 builder.Services.AddCors();
 

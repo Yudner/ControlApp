@@ -26,9 +26,9 @@ namespace ControlApp.Api.Controllers
                 if (!ModelState.IsValid)
                     return StatusCode(StatusCodes.Status400BadRequest, "Parámetros no válidos");
 
-                var result = _createCustomerCommand.Execute(model);
+                var idCustomer = _createCustomerCommand.Execute(model);
 
-                if (!result)
+                if (idCustomer == 0)
                     return StatusCode(StatusCodes.Status400BadRequest);
 
                 return StatusCode(StatusCodes.Status200OK);
